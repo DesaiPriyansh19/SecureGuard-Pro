@@ -3,12 +3,10 @@ import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
 import tagger from "@dhiwise/component-tagger";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  // Fix for Vercel static hosting
-  base: "./", // ✅ Important for 404s & asset paths
+  base: "./", // ✅ Fixes Vercel SPA routing
   build: {
-    outDir: "build", // already set
+    outDir: "build", // Matches Vercel output directory
     chunkSizeWarningLimit: 2000,
   },
   plugins: [tsconfigPaths(), react(), tagger()],

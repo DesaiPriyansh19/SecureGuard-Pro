@@ -56,10 +56,12 @@
     "tailwindcss-fluid-type": "^2.0.7"
   },
   "scripts": {
-    "start": "vite",
-    "build": "vite build --sourcemap",
-    "serve": "vite preview"
-  },
+  "start": "vite",
+  "build": "vite build --sourcemap && npm run copy-redirects",
+  "serve": "vite preview",
+  "copy-redirects": "copyfiles -u 1 _redirects build/"
+}
+,
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -85,6 +87,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@vitejs/plugin-react": "4.3.4",
     "autoprefixer": "10.4.2",
+    "copyfiles": "^2.4.1",
     "postcss": "8.4.8",
     "tailwindcss": "3.4.6",
     "vite": "5.0.0",
